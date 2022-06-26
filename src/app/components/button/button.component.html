@@ -1,0 +1,5 @@
+<button [ngStyle]="{
+  'background-color' : childColors,
+  'border-color' : childColors}"
+  (click)="buttonClickedToParent(childIndex)"
+  >Un bouton {{childIndex +1}}</button>

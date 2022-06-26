@@ -1,0 +1,7 @@
+<app-button
+  *ngFor="let background of parentColors; let i = index"
+  [childColors]="background"
+  [childIndex]="i"
+  (sendButtonClickedToParent)="catchButtonFromChild($event)"
+  >
+</app-button>
