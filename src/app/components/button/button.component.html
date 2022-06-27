@@ -1,5 +1,15 @@
-<button [ngStyle]="{
-  'background-color' : childColors,
-  'border-color' : childColors}"
+<button
   (click)="buttonClickedToParent(childIndex)"
   >Un bouton {{childIndex +1}}</button>
+
+<!--
+  <app-button
+  *ngFor="let background of parentColors; let i = index"
+  [childColors]="background"
+  [childIndex]="i"
+  (sendButtonClickedToParent)="catchButtonFromChild($event)"
+  >
+  [ngStyle]="{
+  'background-color' : childColors,
+  'border-color' : childColors}"
+</app-button>-->

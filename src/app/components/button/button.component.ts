@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Button } from '../../models/button.model';
 
+
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
