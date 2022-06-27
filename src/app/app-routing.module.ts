@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { StudentViewComponent } from './components/student-view/student-view.component';
-import { StudentsListComponent } from './components/students-list/students-list.component';
+
 
 const routes: Routes = [
   {
@@ -16,11 +16,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: "/students/list",
-    component: StudentsListComponent
-  },
-  {
-    path: "/students/:studentName",
+    path: "student/:studentName",
     component: StudentViewComponent
   },
   {
@@ -33,4 +29,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { };
+export { routes };

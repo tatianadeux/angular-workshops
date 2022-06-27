@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-student-view',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentViewComponent implements OnInit {
 
-  constructor() { }
+
+  // permet de tester le null sur studentName
+  public studentName: string | null = "";
+
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.studentName = params.get('studentName');
+    })
   }
 
 }
