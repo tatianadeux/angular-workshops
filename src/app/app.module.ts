@@ -11,6 +11,7 @@ import { StudentViewComponent } from './components/student-view/student-view.com
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './app-routing.module';
+import { LoginformComponent } from './components/loginform/loginform.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { routes } from './app-routing.module';
     GroceryComponent,
     HomeComponent,
     StudentViewComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginformComponent
   ],
   imports: [
     BrowserModule,
