@@ -1,0 +1,35 @@
+<h2>Formulaire d'ajout d'un article</h2>
+<form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+  <div>
+    <label for="name">Nom</label>
+    <input type="text" id="name" formControlName="name">
+  </div>
+  <div *ngIf="addForm.controls['name'].errors && isSubmitted">
+    <p *ngIf="addForm.controls['name'].errors['required']">Le champ Nom est requis</p>
+  </div>
+
+  <div>
+    <label for="reference">Référence</label>
+    <input type="text" id="reference" formControlName="reference">
+  </div>
+  <div *ngIf="addForm.controls['reference'].errors && isSubmitted">
+    <p *ngIf="addForm.controls['reference'].errors['validation']">La format de la référence n'est pas bon (ex: 8#AZ34E)</p>
+  </div>
+
+
+  <div>
+    <label for="description">Description</label>
+    <textarea name="" id="" cols="30" rows="10" formControlName="description"></textarea>
+  </div>
+  <div *ngIf="addForm.controls['description'].errors && isSubmitted">
+    <p *ngIf="addForm.controls['description'].errors['required']">Le champ Description est requis</p>
+  </div>
+
+  <button type="submit">Ajouter</button>
+</form>
+
+<h2>Liste d'Articles</h2>
+<ul *ngFor="let article of articleList">
+  <li>L'article {{article.name}}</li>
+</ul>

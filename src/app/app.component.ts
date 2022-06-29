@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Article } from './models/article.model';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,11 @@ export class AppComponent {
   parentIndex: number[] = [0, 1, 2, 3, 4];
 
   receivedButtonFromChild: string = "";
+
+
+  article: Article = new Article("","","");
+
+  articleList: Article[] = [];
 
   constructor() { }
 

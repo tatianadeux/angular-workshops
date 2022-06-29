@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { RouterModule } from '@angular/router';
 import { routes } from './app-routing.module';
 import { LoginformComponent } from './components/loginform/loginform.component';
+import { AddFormComponent } from './components/reactive-forms/add-form/add-form.component';
+import { ArticleComponent } from './components/reactive-forms/article/article.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +24,16 @@ import { LoginformComponent } from './components/loginform/loginform.component';
     HomeComponent,
     StudentViewComponent,
     PageNotFoundComponent,
-    LoginformComponent
+    LoginformComponent,
+    AddFormComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
