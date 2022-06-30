@@ -21,6 +21,7 @@ export class AddFormComponent implements OnInit {
   })
 
   isSubmitted: boolean = false;
+  isValid: boolean = true;
 
   constructor(private formbuilder: FormBuilder) { }
 
@@ -30,8 +31,23 @@ export class AddFormComponent implements OnInit {
 
 
   onSubmit(){
-    console.log(this.addForm);
-    this.isSubmitted = true;
-    this.articleList.push(new Article(this.addForm.get("name")?.value, this.article.reference, this.article.description));
+    if (this.addForm.valid) {
+      console.log(this.addForm);
+      this.isSubmitted = true;
+      let name = this.addForm.get("name")?.value;
+      let reference = this.addForm.get("reference")?.value;
+      let description = this.addForm.get("description")?.value;
+
+      this.articleList.push(new Article(name, reference, description));
+    }
+
+    if (this.addForm.invalid) {
+      this.isValid = false;
+    }
+    }
+
+    get name(){
+      return this.addForm.controls['name']
+    }
   }
-}
+
