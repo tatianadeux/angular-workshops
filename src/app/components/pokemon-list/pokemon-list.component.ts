@@ -26,7 +26,7 @@ export class PokemonListComponent implements OnInit {
       .subscribe(
         /* je déclare un paramètre de type Pokedex */
         (pokedex: Pokedex) => {
-          /* pokedex.cards est du même type que this.pokemonList */
+          /* pokedex.cards est du même type que this.pokemonList*/
         this.pokemonList = pokedex.cards
         }
       )
